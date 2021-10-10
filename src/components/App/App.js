@@ -14,14 +14,17 @@ export default function App() {
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ]);
   const [filter, setFilter] = useState('');
+  const localstorageKeyName = 'contacts';
 
   useEffect(() => {
-    const currentContacts = JSON.parse(localStorage.getItem('contacts')) ?? '';
+    const currentContacts = JSON.parse(
+      localStorage.getItem(localstorageKeyName),
+    );
     currentContacts && setContacts(currentContacts);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem(localstorageKeyName, JSON.stringify(contacts));
   }, [contacts]);
 
   const formSubmitHandler = (name, number) => {
