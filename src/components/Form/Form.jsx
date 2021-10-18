@@ -4,9 +4,9 @@ import { addContact } from '../../redux/contacts-actions';
 import s from './Form.module.css';
 
 export default function Form() {
-  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     const { name, value = '' } = e.target;
@@ -20,7 +20,7 @@ export default function Form() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addContact(name, number));
+    dispatch(addContact({ name, number }));
     resetState();
   };
 
