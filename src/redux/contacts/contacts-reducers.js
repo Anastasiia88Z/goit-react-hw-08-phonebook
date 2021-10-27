@@ -8,18 +8,11 @@ import {
 } from './contacts-operation';
 
 const entities = createReducer([], {
-  [fetchContactsAction.fulfilled]: (_state, action) => action.payload,
-  [addContactsAction.fulfilled]: (state, { payload }) => {
-    if (
-      state.find(
-        contact => contact.name.toLowerCase() === payload.name.toLowerCase(),
-      )
-    ) {
-      alert(`${payload.name} is already in contacts`);
-      return state;
-    }
-    return [payload, ...state];
-  },
+  [fetchContactsAction.fulfilled]: (_state, action) => action.payload.data,
+  [addContactsAction.fulfilled]: (state, { payload }) => [
+    payload.data,
+    ...state,
+  ],
   [deleteContactsAction.fulfilled]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
 });
