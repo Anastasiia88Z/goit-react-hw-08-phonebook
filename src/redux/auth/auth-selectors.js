@@ -9,4 +9,5 @@ const authSelectors = {
   getUsername,
   getIsFetching,
 };
+
 export default authSelectors;
