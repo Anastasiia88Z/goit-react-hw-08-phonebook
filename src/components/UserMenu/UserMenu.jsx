@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Navbar } from 'react-bootstrap';
 import { logOut } from '../../redux/auth/auth-operations';
-import authSelectors from '../../redux/auth/auth.selectors';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
