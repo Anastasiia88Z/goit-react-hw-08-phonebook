@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Col, Row, Button, Container } from 'react-bootstrap';
-import { authOperations } from '../redux/auth';
+import { register } from '../redux/auth/auth-operations';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -9,21 +9,28 @@ export default function RegisterView() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const onSubmit = (name, email, password) =>
+    dispatch(register({ name, email, password }));
+
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'name':
-        return setName(value);
+        setName(value);
+        break;
       case 'email':
-        return setEmail(value);
+        setEmail(value);
+        break;
       case 'password':
-        return setPassword(value);
+        setPassword(value);
+        break;
       default:
         return;
     }
   };
+
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.register({ name, email, password }));
+    onSubmit(name, email, password);
     setName('');
     setEmail('');
     setPassword('');

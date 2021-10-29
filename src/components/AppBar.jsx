@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Navbar } from 'react-bootstrap';
 import Navigation from './Navigation';
-import AuthNav from './AuthNav';
+import AuthNav from './AuthNav/AuthNav';
 import UserMenu from './UserMenu/UserMenu';
 import authSelectors from '../redux/auth/auth-selectors';
 

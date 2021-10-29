@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import * as contactsOperation from '../../redux/contacts/contacts-operations';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container, Form, Col, Row, Button } from 'react-bootstrap';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
-// import s from './Form.module.css';
 
-export default function ContactForm() {
+export function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
@@ -82,3 +80,5 @@ export default function ContactForm() {
     </Container>
   );
 }
+
+export default ContactForm;

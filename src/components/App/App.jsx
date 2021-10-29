@@ -8,7 +8,7 @@ import AppBar from '../AppBar';
 import Container from '../Container/Container';
 import { fetchCurrentUser } from '../../redux/auth/auth-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
-// import s from './App.module.css';
+import s from './App.module.css';
 
 const AsyncHomeView = lazy(() => import('../../views/HomeView'));
 const AsyncLoginView = lazy(() => import('../../views/LoginView'));
@@ -24,7 +24,7 @@ export default function App() {
   }, [dispatch]);
 
   return !isFetching ? (
-    <Container>
+    <div>
       <AppBar />
 
       <Suspense
@@ -37,6 +37,7 @@ export default function App() {
             timeout={2000}
             display="flex"
             justify-content="center"
+            className={s.loader}
           />
         }
       >
@@ -44,17 +45,20 @@ export default function App() {
           <PublicRoute exact path="/">
             <AsyncHomeView />
           </PublicRoute>
-          <PublicRoute exact path="/register">
+
+          <PublicRoute exact path="/register" redirectTo="/contacts" restricted>
             <AsyncRegisterView />
           </PublicRoute>
-          <PrivateRoute exact path="/login">
+
+          <PublicRoute exact path="/login" redirectTo="/contacts" restricted>
             <AsyncLoginView />
-          </PrivateRoute>
-          <PublicRoute path="/contacts">
-            <AsyncContactsView />
           </PublicRoute>
+
+          <PrivateRoute path="/contacts" redirectTo="/login">
+            <AsyncContactsView />
+          </PrivateRoute>
         </Switch>
       </Suspense>
-    </Container>
+    </div>
   ) : null;
 }

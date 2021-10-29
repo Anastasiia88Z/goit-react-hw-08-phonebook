@@ -1,8 +1,8 @@
 import React from 'react';
 
 const HomeView = () => (
-  <div>
-    <h1>Welcome to registration in PhoneBook</h1>
+  <div className="home-container">
+    <h1 className="title-home">Welcome to registration in PhoneBook</h1>
   </div>
 );
 
