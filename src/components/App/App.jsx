@@ -5,7 +5,6 @@ import Loader from 'react-loader-spinner';
 import PrivateRoute from '../Routers/PrivateRoute';
 import PublicRoute from '../Routers/PublicRouter';
 import AppBar from '../AppBar';
-import Container from '../Container/Container';
 import { fetchCurrentUser } from '../../redux/auth/auth-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import s from './App.module.css';
