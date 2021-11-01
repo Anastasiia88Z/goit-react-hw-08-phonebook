@@ -3,6 +3,7 @@ import * as contactsOperation from '../../redux/contacts/contacts-operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Form, Col, Row, Button } from 'react-bootstrap';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
+import s from '../../index.css';
 
 export function ContactForm() {
   const [name, setName] = useState('');
@@ -52,6 +53,7 @@ export function ContactForm() {
                 value={name}
                 onChange={handleChange}
                 placeholed="Enter your name"
+                className={s.form}
               />
             </Col>
           </Row>
@@ -67,6 +69,7 @@ export function ContactForm() {
                 value={number}
                 onChange={handleChange}
                 placeholed="Enter your telephone"
+                className={s.form}
               />
             </Col>
           </Row>

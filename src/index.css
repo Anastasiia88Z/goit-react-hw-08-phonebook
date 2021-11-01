@@ -79,3 +79,7 @@ code {
   text-align: center;
   margin: 0;
 }
+
+.form {
+  width: 400px;
+}

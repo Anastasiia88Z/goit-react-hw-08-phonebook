@@ -16,7 +16,9 @@ const AsyncLoginView = lazy(() =>
 const AsyncRegisterView = lazy(() =>
   import('../../views/RegisterView/RegisterView.jsx'),
 );
-const AsyncContactsView = lazy(() => import('../../views/ContactsView.jsx'));
+const AsyncContactsView = lazy(() =>
+  import('../../views/ContactsView/ContactsView.jsx'),
+);
 
 export default function App() {
   const dispatch = useDispatch();
