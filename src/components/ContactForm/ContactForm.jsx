@@ -3,7 +3,7 @@ import * as contactsOperation from '../../redux/contacts/contacts-operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Form, Col, Row, Button } from 'react-bootstrap';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
-import s from '../../index.css';
+import s from '../App/App.module.css';
 
 export function ContactForm() {
   const [name, setName] = useState('');
@@ -76,7 +76,9 @@ export function ContactForm() {
         </Form.Group>
         <Row>
           <Col>
-            <Button type="submit">Add to contact list</Button>
+            <Button type="submit" className="s.btn-primary">
+              Add to contact list
+            </Button>
           </Col>
         </Row>
       </Form>
