@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Col, Row, Button, Container } from 'react-bootstrap';
-import { register } from '../redux/auth/auth-operations';
+import { register } from '../../redux/auth/auth-operations';
+import s from '../RegisterView/RegisterView.module.css';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ export default function RegisterView() {
                 required
                 value={name}
                 onChange={handleChange}
+                className={s.form}
               />
             </Col>
           </Row>
@@ -62,6 +64,7 @@ export default function RegisterView() {
                 required
                 value={email}
                 onChange={handleChange}
+                className={s.form}
               />
             </Col>
           </Row>
@@ -76,7 +79,8 @@ export default function RegisterView() {
                 value={password}
                 onChange={handleChange}
                 pattern=".{8,}"
-                title="Password must be minimum 8 numbers"
+                placeholder="Password must be minimum 8 numbers"
+                className={s.form}
               />
             </Col>
           </Row>
@@ -84,7 +88,9 @@ export default function RegisterView() {
 
         <Row>
           <Col>
-            <Button type="submit">Sign Up</Button>
+            <Button type="submit" className={s.button}>
+              Sign Up
+            </Button>
           </Col>
         </Row>
       </Form>

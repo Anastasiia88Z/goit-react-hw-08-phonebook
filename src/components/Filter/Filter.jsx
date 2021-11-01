@@ -13,7 +13,7 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   const onChangeHandler = event => dispatch(changeFilter(event.target.value));
-  const onBlur = () => dispatch(changeFilter(''));
+  const onBlurHandler = () => dispatch(changeFilter(''));
 
   if (contacts.length === 0) {
     return <h2 style={{ display: 'none' }}>Search</h2>;
@@ -27,7 +27,7 @@ const Filter = () => {
               type="text"
               value={value}
               onChange={onChangeHandler}
-              onBlur={onBlur}
+              onBlur={onBlurHandler}
             />
           </Form.Group>
         </Form>

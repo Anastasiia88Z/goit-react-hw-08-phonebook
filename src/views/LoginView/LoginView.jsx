@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { logIn } from '../redux/auth/auth-operations';
+import { logIn } from '../../redux/auth/auth-operations';
 import { Form, Col, Row, Button, Container } from 'react-bootstrap';
+import s from '../LoginView/LoginView.module.css';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ export default function LoginView() {
                 required
                 value={email}
                 onChange={handleChange}
+                className={s.form}
               />
             </Col>
           </Row>
@@ -48,6 +50,7 @@ export default function LoginView() {
                 required
                 value={password}
                 onChange={handleChange}
+                className={s.form}
               />
             </Col>
           </Row>
