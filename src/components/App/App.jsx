@@ -7,7 +7,7 @@ import PublicRoute from '../routes/PublicRouter';
 import AppBar from '../AppBar';
 import { fetchCurrentUser } from '../../redux/auth/auth-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
-import s from '../../index.css';
+import s from '../App/App.module.css';
 
 const AsyncHomeView = lazy(() => import('../../views/HomeView/HomeView.jsx'));
 const AsyncLoginView = lazy(() =>

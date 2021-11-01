@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.btn-primary {
+  width: 94%;
+  margin-top: 15px;
+}
+
 .btn-logout {
   display: inline-block;
   font-weight: 400;
@@ -29,6 +34,12 @@ code {
   font-size: 1rem;
   border-radius: 0.25rem;
   margin-left: 10px;
+}
+
+.navbar-expand {
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .welcome {
@@ -72,6 +83,10 @@ code {
 .container {
   width: 30%;
   margin-bottom: 50px;
+}
+
+.home-container {
+  margin: 10px;
 }
 
 .title-home {
